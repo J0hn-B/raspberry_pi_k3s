@@ -6,16 +6,11 @@ The project is based on Rasberry Pi 4 and Kubernetes.
 
 - Create an ubuntu_pass.txt with the WiFi information:
 
-EOF <
-
+```bash
 ## This file is generated from information provided by the datasource.  Changes
-
 ## to it will not persist across an instance reboot.  To disable cloud-init's
-
 ## network configuration capabilities, write a file
-
 ## /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
-
 ## network: {config: disabled}
 
 network:
@@ -32,7 +27,8 @@ network:
       access-points: 
         "SSID_NAME":
           password: "SSID_PASSWORD"
-EOF
+
+```
 
 ```cd ~/temp/rasberry_pi/ansible/ubuntu_server_settings```
 

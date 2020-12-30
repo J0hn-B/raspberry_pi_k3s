@@ -11,6 +11,8 @@ The project is based on Rasberry Pi 4 and Kubernetes.
 
 3) Get Rasberry Pi IP
 
+4) Each node must have a unique hostname
+
 ## 1) Prepare Rasberry_Pi Wi-Fi
 
 ```git clone https://github.com/J0hn-B/rasberry_pi_k3s.git```

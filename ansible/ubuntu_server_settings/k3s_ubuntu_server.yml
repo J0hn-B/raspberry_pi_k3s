@@ -9,7 +9,6 @@
   tasks:
     - name: Reboot to avoid process lock from initial boot
       reboot:
-
     - name: Update Cache
       apt:
         update_cache: yes
@@ -17,13 +16,11 @@
         autoclean: yes
         force_apt_get: yes
         cache_valid_time: 86400
-
     - name: Update all packages to their latest version
       apt:
         name: "*"
         state: latest
         force_apt_get: true
-
     - name: Add the Wi-Fi password
       template:
         src: ~/temp/rasberry_pi_k3s/ansible/ubuntu_server_settings/ubuntu_pass.txt
@@ -31,13 +28,10 @@
         owner: root
         mode: 0644
       register: wifi_pass
-
     - name: Apply netplan for eth0 and wi-fi
       command: netplan generate && netplan apply
       when: wifi_pass.changed
-
     - name: Wait for the task to complete, remove ethernet cable and find your Wi-Fi ip.
       reboot:
-
     - debug:
         msg: "Your Wi-Fi IP is {{ansible_wlan0.ipv4.address}}"

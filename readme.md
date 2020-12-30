@@ -2,7 +2,7 @@
 
 The project is based on Rasberry Pi 4 and Kubernetes.
 
-## 1) Prepare Rasberry_Pi
+## 1) Prepare Rasberry_Pi  [ubuntu_server_settings]
 
 - Create an ubuntu_pass.txt with the WiFi information:
 

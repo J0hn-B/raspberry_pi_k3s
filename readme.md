@@ -2,6 +2,15 @@
 
 The project is based on Rasberry Pi 4 and Kubernetes.
 
+Cluster: Rasberry Pi 4 2GB as master, Rasberry Pi 4 4GB as agent
+OS: Ubuntu Server 20.04 LTS (RPi 3/4) 64bit
+
+1) Use Rasberry Pi Imager to prepare your sd card
+
+2) Connect Raspberry Pi with ethernet and boot
+
+3) Get Rasberry Pi IP
+
 ## 1) Prepare Rasberry_Pi Wi-Fi
 
 ```git clone https://github.com/J0hn-B/rasberry_pi_k3s.git```

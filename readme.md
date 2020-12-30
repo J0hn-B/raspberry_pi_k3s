@@ -4,6 +4,8 @@ The project is based on Rasberry Pi 4 and Kubernetes.
 
 ## 1) Prepare Rasberry_Pi  [ubuntu_server_settings]
 
+```cd ~/temp/rasberry_pi/ansible/ubuntu_server_settings```
+
 - Create an ubuntu_pass.txt with the WiFi information:
 
 ```bash
@@ -29,8 +31,6 @@ network:
           password: "SSID_PASSWORD"
 
 ```
-
-```cd ~/temp/rasberry_pi/ansible/ubuntu_server_settings```
 
 then run the play: ```ansible-playbook k3s_ubuntu_server.yml -i inventory.txt --ask-pass```
 

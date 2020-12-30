@@ -2,11 +2,17 @@
 
 The project is based on Rasberry Pi 4 and Kubernetes.
 
-## 1) Prepare Rasberry_Pi  [ubuntu_server_settings]
+## 1) Prepare Rasberry_Pi Wi-Fi
 
-```cd ~/temp/rasberry_pi_k3s/ansible/ubuntu_server_settings```
+```git clone https://github.com/J0hn-B/rasberry_pi_k3s.git```
+
+```cd rasberry_pi_k3s/ansible/ubuntu_server_settings```
 
 - Create an ubuntu_pass.txt with the WiFi information:
+
+```touch ubuntu_pass.txt```
+
+- copy paste the code and update the wifi SSID_NAME and SSID_PASSWORD
 
 ```bash
 ## This file is generated from information provided by the datasource.  Changes
@@ -32,17 +38,21 @@ network:
 
 ```
 
-then run the play: ```ansible-playbook k3s_ubuntu_server.yml -i hosts.ini --ask-pass```
+- update the ip in the hosts.ini file
+
+- then run the play: ```ansible-playbook k3s_ubuntu_server.yml -i hosts.ini --ask-pass```
 
 ## 2) Install K3s in 3 steps
 
-```cd ~/temp/rasberry_pi_k3s/ansible/k3s-ansible```
+```cd ../k3s-ansible/inventory/my-cluster```
 
 - In ansible/k3s-ansible/inventory/my-cluster modify hosts.ini and update group_vars.
 
+- ```cd ..```
+
 - ```ansible-playbook site.yml -i inventory/my-cluster/hosts.ini --ask-pass```
 
-- ```scp ubuntu@master_ip:~/.kube/config ~/.kube/config```
+- ```scp ubuntu@your_master_ip:~/.kube/config ~/.kube/config```
 
 details in: <https://github.com/k3s-io/k3s-ansible>
 
@@ -52,7 +62,7 @@ note: From inside Rasberry_Pi: ```sudo kubectl get nodes```
 
 - Go to: <https://github.com/carlosedp/cluster-monitoring> and follow the instructions
 
-- ```cd ~/temp/rasberry_pi/k8s/cluster-monitoring```
+- ```cd ../../k8s/cluster-monitoring/```
 
 - ```kubectl apply -f manifests/setup/```
 - ```kubectl apply -f manifests/```

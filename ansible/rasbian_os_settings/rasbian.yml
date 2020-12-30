@@ -1,63 +1,63 @@
----
-- hosts: all
-  become: yes
-  # strategy: debug
-  # - debug: var=ghost_coolsite_usr.user
-  tasks:
-    - name: Ensure SSh is enabled
-      command: "raspi-config nonint do_ssh 0"
-      register: enable_ssh
-      changed_when: "enable_ssh.rc != 0"
+# ---
+# - hosts: all
+#   become: yes
+#   # strategy: debug
+#   # - debug: var=ghost_coolsite_usr.user
+#   tasks:
+#     - name: Ensure SSh is enabled
+#       command: "raspi-config nonint do_ssh 0"
+#       register: enable_ssh
+#       changed_when: "enable_ssh.rc != 0"
 
-    - name: Enable VNC server
-      command: "raspi-config nonint do_vnc 0"
-      register: enable_vnc
-      changed_when: "enable_vnc.rc != 0"
+#     - name: Enable VNC server
+#       command: "raspi-config nonint do_vnc 0"
+#       register: enable_vnc
+#       changed_when: "enable_vnc.rc != 0"
 
-    - name: Enable Rasberry Pi fan to avoid overheating
-      command: "raspi-config nonint do_fan 0 20 65"
-      register: enable_fan
-      changed_when: "enable_fan.rc != 0"
+#     - name: Enable Rasberry Pi fan to avoid overheating
+#       command: "raspi-config nonint do_fan 0 20 65"
+#       register: enable_fan
+#       changed_when: "enable_fan.rc != 0"
 
-    - name: Boot to desktop environment
-      command: "raspi-config nonint do_boot_behaviour B3"
-      register: boot_desktop
-      changed_when: "boot_desktop.rc != 0"
+#     - name: Boot to desktop environment
+#       command: "raspi-config nonint do_boot_behaviour B3"
+#       register: boot_desktop
+#       changed_when: "boot_desktop.rc != 0"
 
-    - name: Set desktop auto-login as cuurent user
-      command: "raspi-config nonint do_boot_behaviour B4"
-      register: boot_desktop_login
-      changed_when: "boot_desktop_login.rc != 0"
+#     - name: Set desktop auto-login as cuurent user
+#       command: "raspi-config nonint do_boot_behaviour B4"
+#       register: boot_desktop_login
+#       changed_when: "boot_desktop_login.rc != 0"
 
-    - name: Configure the default keyboard
-      command: "raspi-config nonint do_configure_keyboard gb"
-      register: default_keyboard
-      changed_when: "default_keyboard.rc != 0"
+#     - name: Configure the default keyboard
+#       command: "raspi-config nonint do_configure_keyboard gb"
+#       register: default_keyboard
+#       changed_when: "default_keyboard.rc != 0"
 
-    - name: Set WLAN country
-      command: "raspi-config nonint do_wifi_country GB"
-      register: wlan_country
-      changed_when: "wlan_country.rc != 0"
+#     - name: Set WLAN country
+#       command: "raspi-config nonint do_wifi_country GB"
+#       register: wlan_country
+#       changed_when: "wlan_country.rc != 0"
 
-    - name: Ensure en_GB locale exists
-      locale_gen:
-        name: en_GB.UTF-8
-        state: present
+#     - name: Ensure en_GB locale exists
+#       locale_gen:
+#         name: en_GB.UTF-8
+#         state: present
 
-    - name: Set the default locale to en_GB
-      command: localectl set-locale LANG=en_GB.UTF-8 LANGUAGE=en_GB.UTF-8
-      register: set_locale
-      changed_when: "set_locale.rc != 0"
+#     - name: Set the default locale to en_GB
+#       command: localectl set-locale LANG=en_GB.UTF-8 LANGUAGE=en_GB.UTF-8
+#       register: set_locale
+#       changed_when: "set_locale.rc != 0"
 
-    - name: Set timezone to Europe/London
-      timezone:
-        name: Europe/London
+#     - name: Set timezone to Europe/London
+#       timezone:
+#         name: Europe/London
 
-    - name: Add the Wi-Fi password (add a wifi_password.txt inside the directory with credentials. Check readme)
-      template:
-        src: /c/temp/rasberry_pi/ansible/wifi_password.txt
-        dest: /etc/wpa_supplicant/wpa_supplicant.conf
-        owner: root
-        mode: 0644
-      register: wifi_pass
-      changed_when: "wifi_pass.diff != []"
+#     - name: Add the Wi-Fi password (add a wifi_password.txt inside the directory with credentials. Check readme)
+#       template:
+#         src: /c/temp/rasberry_pi/ansible/wifi_password.txt
+#         dest: /etc/wpa_supplicant/wpa_supplicant.conf
+#         owner: root
+#         mode: 0644
+#       register: wifi_pass
+#       changed_when: "wifi_pass.diff != []"

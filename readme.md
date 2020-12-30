@@ -2,8 +2,8 @@
 
 The project is based on Rasberry Pi 4 and Kubernetes.
 
-Cluster: Rasberry Pi 4 2GB as master, Rasberry Pi 4 4GB as agent
-OS: Ubuntu Server 20.04 LTS (RPi 3/4) 64bit
+- Cluster: Rasberry Pi 4 2GB as master, Rasberry Pi 4 4GB as agent
+- OS: Ubuntu Server 20.04 LTS (RPi 3/4) 64bit
 
 1) Use Rasberry Pi Imager to prepare your sd card
 

@@ -1,23 +1,23 @@
 # Build ARM based K3s cluster
 
-The cluster is based on Rasberry Pi 4 and k3s.
+The cluster is based on Raspberry Pi 4 and k3s.
 
-- Cluster: Rasberry Pi 4 2GB as master node, Rasberry Pi 4 4GB as agent node
+- Cluster: Raspberry Pi 4 2GB as master node, Raspberry Pi 4 4GB as agent node
 - OS: Ubuntu Server 20.04 LTS (RPi 3/4) 64bit
 
-1) Use Rasberry Pi Imager to prepare your sd card
+1) Use Raspberry Pi Imager to prepare your sd card
 
 2) Connect Raspberry Pi with ethernet cable and boot
 
-3) Find Rasberry Pi IP. You can use nmap or fing: > <https://www.fing.com/products/fing-desktop>
+3) Find Raspberry Pi IP. You can use nmap or fing: > <https://www.fing.com/products/fing-desktop>
 
 4) Each node must have a unique **hostname**
 
-## 1) Prepare Rasberry_Pi Wi-Fi
+## 1) Prepare Raspberry_Pi Wi-Fi
 
 ```git clone https://github.com/J0hn-B/raspberry_pi_k3s.git```
 
-```cd rasberry_pi_k3s/ansible/ubuntu_server_settings/templates```
+```cd raspberry_pi_k3s/ansible/ubuntu_server_settings/templates```
 
 - Create an wifi_pass.txt with the WiFi information:
 

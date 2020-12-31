@@ -15,7 +15,7 @@ The cluster is based on Rasberry Pi 4 and k3s.
 
 ## 1) Prepare Rasberry_Pi Wi-Fi
 
-```git clone https://github.com/J0hn-B/rasberry_pi_k3s.git```
+```git clone https://github.com/J0hn-B/raspberry_pi_k3s.git```
 
 ```cd rasberry_pi_k3s/ansible/ubuntu_server_settings/templates```
 

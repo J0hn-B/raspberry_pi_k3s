@@ -19,11 +19,11 @@ The cluster is based on Rasberry Pi 4 and k3s.
 
 ```cd rasberry_pi_k3s/ansible/ubuntu_server_settings/templates```
 
-- Create an ubuntu_pass.txt with the WiFi information:
+- Create an wifi_pass.txt with the WiFi information:
 
-```touch ubuntu_pass.txt```
+```touch wifi_pass.txt```
 
-- copy paste the code inside ubuntu_pass.txt and update the wifi SSID_NAME and SSID_PASSWORD with your values
+- copy paste the code inside wifi_pass.txt and update the wifi SSID_NAME and SSID_PASSWORD with your values
 
 ```bash
 ## This file is generated from information provided by the datasource.  Changes

@@ -23,7 +23,7 @@
         force_apt_get: true
     - name: Add the Wi-Fi password
       template:
-        src: ubuntu_pass.txt
+        src: wifi_pass.txt
         dest: /etc/netplan/50-cloud-init.yaml
         owner: root
         mode: 0644

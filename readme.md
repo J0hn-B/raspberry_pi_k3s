@@ -56,7 +56,7 @@ network:
 
 - wait for play to finish and remove the ethernet cable. Pi's will reboot and return the Wi-FI IP's (wlan0)
 
-- update the ip in the hosts.ini file with your Wi-FI IP's and re-run the play *(confirmation only)*
+- update the ip in the hosts.ini file with your Wi-FI IP's and re-run the play *(for confirmation only)*
 
 
 ## 2) Install K3s in 3 steps

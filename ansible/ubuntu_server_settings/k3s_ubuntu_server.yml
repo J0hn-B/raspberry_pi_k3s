@@ -23,7 +23,7 @@
         force_apt_get: true
     - name: Add the Wi-Fi password
       template:
-        src: ~/temp/rasberry_pi_k3s/ansible/ubuntu_server_settings/ubuntu_pass.txt
+        src: ubuntu_pass.txt
         dest: /etc/netplan/50-cloud-init.yaml
         owner: root
         mode: 0644

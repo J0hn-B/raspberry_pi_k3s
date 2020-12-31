@@ -52,7 +52,7 @@ network:
 
 - update the ip in the hosts.ini file with your **ethernet ip**
 
-- then run the play: ```ansible-playbook k3s_ubuntu_server.yml -i hosts.ini --ask-pass```
+- Run the play: ```ansible-playbook k3s_ubuntu_server.yml -i hosts.ini --ask-pass```
 
 Wait for play to finish and remove the ethernet cable. Pi's will reboot and return the Wi-FI IP's (wlan0)
 

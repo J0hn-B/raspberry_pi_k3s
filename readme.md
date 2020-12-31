@@ -59,13 +59,13 @@ network:
 - update the ip in the hosts.ini file with your Wi-FI IP's and re-run the play *(for confirmation only)*
 
 
-## 2) Install K3s in 3 steps
+## 2) Install K3s 
 
 ```cd ../k3s-ansible/inventory/my-cluster```
 
-- In ansible/k3s-ansible/inventory/my-cluster modify hosts.ini and update group_vars.
+- In ansible/k3s-ansible/inventory/my-cluster update ip's in hosts.ini and update group_vars.
 
-- ```cd ..```
+- ```cd ../..```
 
 - ```ansible-playbook site.yml -i inventory/my-cluster/hosts.ini --ask-pass```
 
@@ -75,13 +75,15 @@ details in: <https://github.com/k3s-io/k3s-ansible>
 
 note: From inside Rasberry_Pi: ```sudo kubectl get nodes```
 
-## Install Monitoring
-
-- Go to: <https://github.com/carlosedp/cluster-monitoring> and follow the instructions
+## Install cluster monitoring
 
 - ```cd ../../k8s/cluster-monitoring/```
-
+- update the vars.jsonnet values as described here <https://github.com/carlosedp/cluster-monitoring#quickstart-for-k3s>
+- ```make vendor```
+- ```make```
 - ```kubectl apply -f manifests/setup/```
 - ```kubectl apply -f manifests/```
 
-- Access Grafana: <https://grafana.192.168.50.38.nip.io>
+- Access Grafana: <https://your_master_ip.nip.io>
+- username: admin
+- password:admin

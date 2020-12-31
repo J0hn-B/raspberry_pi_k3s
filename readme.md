@@ -1,17 +1,17 @@
 # Build ARM based K3s cluster
 
-The project is based on Rasberry Pi 4 and Kubernetes.
+The cluster is based on Rasberry Pi 4 and k3s.
 
-- Cluster: Rasberry Pi 4 2GB as master, Rasberry Pi 4 4GB as agent
+- Cluster: Rasberry Pi 4 2GB as master node, Rasberry Pi 4 4GB as agent node
 - OS: Ubuntu Server 20.04 LTS (RPi 3/4) 64bit
 
 1) Use Rasberry Pi Imager to prepare your sd card
 
-2) Connect Raspberry Pi with ethernet and boot
+2) Connect Raspberry Pi with ethernet cable and boot
 
-3) Get Rasberry Pi IP
+3) Find Rasberry Pi IP. You can use nmap or fing <https://www.fing.com/products/fing-desktop>
 
-4) Each node must have a unique hostname
+4) Each node must have a unique **hostname**
 
 ## 1) Prepare Rasberry_Pi Wi-Fi
 

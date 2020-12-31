@@ -54,9 +54,10 @@ network:
 
 - Run the play: ```ansible-playbook k3s_ubuntu_server.yml -i hosts.ini --ask-pass```
 
-Wait for play to finish and remove the ethernet cable. Pi's will reboot and return the Wi-FI IP's (wlan0)
+- wait for play to finish and remove the ethernet cable. Pi's will reboot and return the Wi-FI IP's (wlan0)
 
-- update the ip in the hosts.ini file with your Wi-FI IP's
+- update the ip in the hosts.ini file with your Wi-FI IP's and re-run the play *(confirmation only)*
+
 
 ## 2) Install K3s in 3 steps
 

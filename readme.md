@@ -86,4 +86,4 @@ note: From inside Rasberry_Pi: ```sudo kubectl get nodes```
 
 - Access Grafana: <https://your_master_ip.nip.io>
 - username: admin
-- password:admin
+- password: admin

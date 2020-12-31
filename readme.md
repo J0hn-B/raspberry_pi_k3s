@@ -9,7 +9,7 @@ The cluster is based on Rasberry Pi 4 and k3s.
 
 2) Connect Raspberry Pi with ethernet cable and boot
 
-3) Find Rasberry Pi IP. You can use nmap or fing     <https://www.fing.com/products/fing-desktop>
+3) Find Rasberry Pi IP. You can use nmap or fing: > <https://www.fing.com/products/fing-desktop>
 
 4) Each node must have a unique **hostname**
 

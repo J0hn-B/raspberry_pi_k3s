@@ -24,6 +24,7 @@ The cluster is based on Rasberry Pi 4 and k3s.
 ```touch wifi_pass.txt```
 
 - copy paste the code inside wifi_pass.txt and update the wifi SSID_NAME and SSID_PASSWORD with your values
+- A wifi_file.sample is provided for standard indentation.
 
 ```bash
 ## This file is generated from information provided by the datasource.  Changes

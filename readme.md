@@ -17,13 +17,13 @@ The project is based on Rasberry Pi 4 and Kubernetes.
 
 ```git clone https://github.com/J0hn-B/rasberry_pi_k3s.git```
 
-```cd rasberry_pi_k3s/ansible/ubuntu_server_settings```
+```cd rasberry_pi_k3s/ansible/ubuntu_server_settings/templates```
 
 - Create an ubuntu_pass.txt with the WiFi information:
 
 ```touch ubuntu_pass.txt```
 
-- copy paste the code and update the wifi SSID_NAME and SSID_PASSWORD
+- copy paste the code inside ubuntu_pass.txt and update the wifi SSID_NAME and SSID_PASSWORD with your values
 
 ```bash
 ## This file is generated from information provided by the datasource.  Changes
@@ -49,9 +49,13 @@ network:
 
 ```
 
-- update the ip in the hosts.ini file
+- update the ip in the hosts.ini file with your ethernet ip
 
 - then run the play: ```ansible-playbook k3s_ubuntu_server.yml -i hosts.ini --ask-pass```
+
+Wait for play to finish and remove the ethernet cable. Pi's will reboot and return the Wi-FI IP's (wlan0)
+
+- update the ip in the hosts.ini file with your Wi-FI IP's
 
 ## 2) Install K3s in 3 steps
 

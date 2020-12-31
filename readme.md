@@ -1,4 +1,4 @@
-# Building IoT ARM based K3s cluster
+# Build ARM based K3s cluster
 
 The project is based on Rasberry Pi 4 and Kubernetes.
 

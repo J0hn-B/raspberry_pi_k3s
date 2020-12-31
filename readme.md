@@ -50,7 +50,7 @@ network:
 
 ```
 
-- update the ip in the hosts.ini file with your ethernet ip
+- update the ip in the hosts.ini file with your **ethernet ip**
 
 - then run the play: ```ansible-playbook k3s_ubuntu_server.yml -i hosts.ini --ask-pass```
 

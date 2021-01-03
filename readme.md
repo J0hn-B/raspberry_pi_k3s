@@ -1,7 +1,6 @@
 # Raspberry Pi 4 K3s cluster
 
-> [!CAUTION]
-> Each node must have a unique **hostname**
+> WARNING: Each node must have a unique **hostname**
 
 - Cluster: Raspberry Pi 4 2GB as master node, Raspberry Pi 4 4GB as agent node
 - OS: Ubuntu Server 20.04 LTS (RPi 3/4) 64bit

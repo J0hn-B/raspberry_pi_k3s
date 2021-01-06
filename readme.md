@@ -71,7 +71,7 @@ network:
 
 details in: <https://github.com/k3s-io/k3s-ansible>
 
-note: From inside master node: ```sudo kubectl get nodes```
+> Check --> From inside master node: ```sudo kubectl get nodes```
 
 ## Install cluster monitoring
 

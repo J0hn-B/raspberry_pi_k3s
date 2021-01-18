@@ -5,21 +5,21 @@
 - Cluster: Raspberry Pi 4 2GB as master node, Raspberry Pi 4 4GB as agent node
 - OS: Ubuntu Server 20.04 LTS (RPi 3/4) 64bit
 
-1) Use Raspberry Pi Imager to prepare your sd card
+1. Use Raspberry Pi Imager to prepare your sd card
 
-2) Connect Raspberry Pi with ethernet cable and boot
+2. Connect Raspberry Pi with ethernet cable and boot
 
-3) Find Raspberry Pi IP. You can use nmap or fing: > <https://www.fing.com/products/fing-desktop>
+3. Find Raspberry Pi IP. You can use nmap or fing: > <https://www.fing.com/products/fing-desktop>
 
 ## 1) Prepare Raspberry_Pi Wi-Fi
 
-```git clone https://github.com/J0hn-B/raspberry_pi_k3s.git```
+`git clone https://github.com/J0hn-B/raspberry_pi_k3s.git`
 
-```cd raspberry_pi_k3s/ansible/ubuntu_server_settings/templates```
+`cd raspberry_pi_k3s/ansible/ubuntu_server_settings/templates`
 
 - Create a wifi_pass.txt with the Wi-Fi information:
 
-```touch wifi_pass.txt```
+`touch wifi_pass.txt`
 
 - copy paste the code inside wifi_pass.txt and update the wifi SSID_NAME and SSID_PASSWORD with your values
 - A wifi_file.sample is provided for standard indentation.
@@ -42,7 +42,7 @@ network:
       dhcp4: true
       dhcp6: true
       optional: true
-      access-points: 
+      access-points:
         "SSID_NAME":
           password: "SSID_PASSWORD"
 
@@ -50,39 +50,38 @@ network:
 
 - update the ip in the hosts.ini file with your **ethernet ip**
 
-- Run the play: ```ansible-playbook k3s_ubuntu_server.yml -i hosts.ini --ask-pass```
+- Run the play: `ansible-playbook k3s_ubuntu_server.yml -i hosts.ini --ask-pass`
 
 - wait for play to finish and remove the ethernet cable. Pi's will reboot and return the Wi-FI ip (wlan0)
 
-- update the ip in the hosts.ini file with your **Wi-FI ip** and re-run the play *(for confirmation only)*
+- update the ip in the hosts.ini file with your **Wi-FI ip** and re-run the play _(for confirmation only)_
 
+## 2) Install K3s
 
-## 2) Install K3s 
-
-```cd ../k3s-ansible/inventory/my-cluster```
+`cd ../k3s-ansible/inventory/my-cluster`
 
 - In ansible/k3s-ansible/inventory/my-cluster update ip's in hosts.ini and update group_vars.
 
-- ```cd ../..```
+- `cd ../..`
 
-- ```ansible-playbook site.yml -i inventory/my-cluster/hosts.ini --ask-pass```
+- `ansible-playbook site.yml -i inventory/my-cluster/hosts.ini --ask-pass`
 
-- ```scp ubuntu@your_master_ip:~/.kube/config ~/.kube/config```
+- `scp ubuntu@your_master_ip:~/.kube/config ~/.kube/config`
 
 details in: <https://github.com/k3s-io/k3s-ansible>
 
-> Check --> From inside master node: ```sudo kubectl get nodes```
+> Check --> From inside master node: `sudo kubectl get nodes`
 
 ## Install cluster monitoring
 
-- ```cd ../../k8s/cluster-monitoring/```
+- `cd ../../k8s/cluster-monitoring/`
 - update the vars.jsonnet values as described here <https://github.com/carlosedp/cluster-monitoring#quickstart-for-k3s>
-- ```make vendor```
-- ```make```
-- ```kubectl apply -f manifests/setup/```
-- ```kubectl apply -f manifests/```
+- `make vendor`
+- `make`
+- `kubectl apply -f manifests/setup/`
+- `kubectl apply -f manifests/`
 
-- Access Grafana: <https://your_master_ip.nip.io>
+- Access Grafana: <https://your_master_ip.nip.io> example: <https://grafana.192.168.50.38.nip.io>
 - username: admin
 - password: admin
 - Go to Dashboards --> Manage --> Default and check --> Kubernetes cluster monitoring (via Prometheus)
